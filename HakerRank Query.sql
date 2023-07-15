@@ -139,3 +139,11 @@ from station where lat_n > 38.7780;
 select round(long_w,4) from station
 where lat_n=select min(lat_n) from station 
 where lat_n<37.7880;
+
+--Higher than 75--
+select name from students where marks>75 order by right(name,3),id;
+
+--Weather Problem 19--
+
+select round(sqrt(power(max(lat_n)-min(lat_n),2)+power(max(long_w)-min(long_w),2)),4)
+from station;
