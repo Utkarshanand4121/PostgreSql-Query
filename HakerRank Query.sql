@@ -153,3 +153,9 @@ from station;
 select city.name from city
 left join country on city.countrycode=country.code
 where country.continent='Africa';
+
+--Average Population of each continents--
+
+select country.continent,floor(avg(city.population)) from country
+join city on city.countrycode=country.code
+group by country.continent;
