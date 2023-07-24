@@ -159,3 +159,8 @@ where country.continent='Africa';
 select country.continent,floor(avg(city.population)) from country
 join city on city.countrycode=country.code
 group by country.continent;
+
+-- Population Census --
+select sum(city.population) from city 
+inner join country on city.countrycode=country.code
+where continent='Asia';
